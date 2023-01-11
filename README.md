@@ -1,11 +1,67 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Build a chat app with Laravel, Pusher and Chatify Laravel Package
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Read the full tutorial here:
+This application detailed the step by step guide on how to build a modern chat application using Laravel, Chatify Laravel Package and Pusher.
+
+
+## Technology
+
+This demo uses:
+* [Pusher](https://pusher.com/)
+* [Laravel](https://laravel.com/)
+* [Chatify Laravel Package](https://github.com/munafio/chatify/)
+
+
+## Running the demo
+To run the demo follow these steps:
+
+1. Head to the [Pusher dashboard](https://dashboard.pusher.com/accounts/sign_up/) (you'll need to create a free account if you haven't already)
+2. From the dashboard, create a new app called "laravel-chat-app" or use any name you prefer
+3. Once created, click the button **Explore**
+4. Click **API Keys** on the left-hand-side and note the automatically-generated REST API Key and the application ID as well
+5. Download the repository [here](https://github.com/webrndexperts/Laravel-chatting-app/archive/heads/main.zip) or by running `git clone https://github.com/webrndexperts/Laravel-chatting-app.git`
+6. Run `composer install` to install all the dependencies for the backend (Laravel)
+7. Run `npm install` to install all the dependencies for the frontend (Bootstrap)
+8. Create a `.env` file with the root folder of the project, then copy the content `.env.example` and paste it in the newly created file.
+9. Next, locate the following variables within the `.env` file and replace the placeholders with the appropriate credentials:
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=YOUR_DB_NAME
+DB_USERNAME=YOUR_DB_USERNAME
+DB_PASSWORD=YOUR_DB_PASSWORD
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_HOST=
+PUSHER_PORT=443
+PUSHER_SCHEME=https
+PUSHER_APP_CLUSTER=mt1
+```
+
+10. Next, run the following command to generate APP_KEY and create tables for your database:
+
+```bash
+php artisan key:generate
+```
+```bash
+php artisan migrate
+```
+
+11. Open the project in two separate terminal. From one of the terminals, run `php artisan serve` to start the backend and `npm run dev` from the other to start the frontend application in watch mode.
+
+12. You can go ahead and register two different users. Once you are done, log in from two different browsers with the credentials of the users created and start a chat session.
+
+## About Author
+* 🏠 [RND Experts](https://rndexperts.com/)
+* 🚀 [LinkedIn](https://www.linkedin.com/company/rndexperts)
+* 📚 [Documentation](https://prodocs.cometchat.com/docs)
+* 👾 [GitHub](https://github.com/webrndexperts)
+
+
 
 ## About Laravel
 

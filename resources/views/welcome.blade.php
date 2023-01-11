@@ -49,26 +49,25 @@
                     </li>
                     @endif
                     @else
-                    <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{ Auth::user()->name }} <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li> <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form></li>
-                   
-                  
-                  </ul>
-                  </li>
                     <li><a href="/chats">Chats</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false"> {{ Auth::user()->name }} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li> <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
 
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+
+
+                        </ul>
+                    </li>
                     @endguest
-
-
                     <li class="dropdown dropdown-notifications">
                         <a href="#notifications-panel" class="dropdown-toggle" data-toggle="dropdown">
                             <i data-count="0" class="glyphicon glyphicon-bell notification-icon"></i>
