@@ -74,9 +74,7 @@ npm run dev
 ## About Author
 * 🏠 [RND Experts](https://rndexperts.com/)
 * 🚀 [LinkedIn](https://www.linkedin.com/company/rndexperts)
-* 📚 [Documentation](https://prodocs.cometchat.com/docs)
 * 👾 [GitHub](https://github.com/webrndexperts)
-
 
 
 ## About Laravel
