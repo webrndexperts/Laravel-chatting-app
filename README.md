@@ -20,8 +20,17 @@ To run the demo follow these steps:
 3. Once created, click the button **Explore**
 4. Click **API Keys** on the left-hand-side and note the automatically-generated REST API Key and the application ID as well
 5. Download the repository [here](https://github.com/webrndexperts/Laravel-chatting-app/archive/heads/main.zip) or by running `git clone https://github.com/webrndexperts/Laravel-chatting-app.git`
+```bash
+git clone https://github.com/webrndexperts/Laravel-chatting-app.git
+```
 6. Run `composer install` to install all the dependencies for the backend (Laravel)
+```bash
+composer install
+```
 7. Run `npm install` to install all the dependencies for the frontend (Bootstrap)
+```bash
+npm install
+```
 8. Create a `.env` file with the root folder of the project, then copy the content `.env.example` and paste it in the newly created file.
 9. Next, locate the following variables within the `.env` file and replace the placeholders with the appropriate credentials:
 
@@ -52,6 +61,13 @@ php artisan migrate
 ```
 
 11. Open the project in two separate terminal. From one of the terminals, run `php artisan serve` to start the backend and `npm run dev` from the other to start the frontend application in watch mode.
+
+```bash
+php artisan serve
+```
+```bash
+npm run dev
+```
 
 12. You can go ahead and register two different users. Once you are done, log in from two different browsers with the credentials of the users created and start a chat session.
 
