@@ -175,9 +175,9 @@
               </li-->
 			  
               <li class="nav-item">
-                <a href="{{ url('/chatify') }}" class="nav-link active">
+                <a href="{{ url('/chats') }}" class="nav-link active">
                   <i class="far fa-user"></i> 
-                  <p>Chatify </p>
+                  <p>Chats </p>
                 </a>
               </li>
 		

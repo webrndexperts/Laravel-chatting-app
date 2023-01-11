@@ -49,3 +49,6 @@ Route::get('test_send', function () {
     event(new App\Events\NotificationEvent('admin'));
     return "Event has been sent!";
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
