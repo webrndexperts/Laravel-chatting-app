@@ -13,5 +13,7 @@ class SendChatNotification
         $message = $event->message;
 
         $recipient->notify(new ChatNotification($message));
+		
+	dd($recipient);	
     }
 }

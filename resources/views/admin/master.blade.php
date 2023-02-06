@@ -45,9 +45,6 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="index3.html" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
     </ul>
 
     <!-- Right navbar links -->
@@ -84,41 +81,55 @@
 				  <i class="fas fa-expand-arrows-alt"></i>
 				</a>
 			  </li>
-			  
-   <li class="nav-item dropdown">
-		<a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
-		<i class="far fa-bell"></i>
-		</a>
-		     <?php 
+
+
+
+		
+     <?php 
 		$users_notification = DB::table('ch_messages')->get();
 		 $user_id ='';
 		 $user_body ='';
-		//echo"<pre>"; print_r($users_notification);
+		 $from_id ='';
+		 $current_user = Auth::user()->id ;
+		$count = DB::table('ch_messages')->select(DB::raw('count(*) as count'))->where('seen', '=', 0)->first()->count;
+	    //echo"<pre>"; print_r($count); echo"</pre>";		 
+		 
 		foreach($users_notification as $user_notify){
+			$user_msg_seen = $user_notify->seen;
 			$user_id = $user_notify->to_id;
-			 $user_body = $user_notify->body;
+		    $from_id = $user_notify->from_id;
+			
+			 
+			if($user_msg_seen == 0){
+				if($user_id == $current_user){	
+		      	$user_body = $user_notify->body;
+				}
+			}
 		    
-		$user = DB::table('users')->where('id', $user_id)->first();
-		$username = $user->name;
+		  $user = DB::table('users')->where('id', $from_id)->first();
+		  $username = $user->name;
 		}
 		?>
+
+			  
+   <li class="nav-item dropdown">
+
+		<a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
+		<i class="far fa-bell"></i>
+		<?php if(!empty($count)) { ?>
+		 <span class="badge badge-warning navbar-badge"><?php echo $count;?></span>
+		</a>
+		<?php } ?>
 		<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
-		<span class="dropdown-item dropdown-header"><?php echo $username; ?> Chatify messages <?php echo $user_body;?></span>
+		<span class="dropdown-item dropdown-header">Chat Notifications</span>
 		
 		<div class="dropdown-divider"></div>
-		<a href="{{ url('/chatify') }}" class="dropdown-item">
-		<i class="fas fa-envelope mr-2"></i> UserName: <?php echo $username; ?>  new messages 
-		</a>
-        
+		<a href="{{ url('/chats') }}" class="dropdown-item">
+		<i class="fas fa-envelope mr-2"></i> <?php echo $count;?> new chat messages</a>
 			
 		</a>
 		</div>
 	</li>  
-
-
-
-
-
 
 	
      <li class="nav-item dropdown-toggle">
